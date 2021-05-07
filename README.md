@@ -1,3 +1,3 @@
 # contract
 
-Smart contract
+Coinyield Smart contract
