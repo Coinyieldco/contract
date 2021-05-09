@@ -1,3 +1,9 @@
-# contract
+# Smart Contracts
+Coinyield Smart contracts
 
-Coinyield Smart contract
+## Getting Started
+To run the tests:
+
+```
+yarn hardhat test
+```
