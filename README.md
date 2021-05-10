@@ -5,5 +5,5 @@ Coinyield Smart contracts
 To run the tests:
 
 ```
-yarn hardhat test
+yarn test
 ```
