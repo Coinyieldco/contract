@@ -5,3 +5,5 @@ typechain/
 cache
 artifacts
 
+# IDE
+.vscode

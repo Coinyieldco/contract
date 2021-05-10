@@ -1,8 +1,7 @@
-//SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.4;
+// SPDX-License-Identifier: BUSL-1.1
+pragma solidity =0.7.6;
 
 import "hardhat/console.sol";
-
 
 contract Oracle {
   address admin;
@@ -17,6 +16,6 @@ contract Oracle {
   }
 
   function setPrice() public onlyAdmin {
-    
+
   }
 }

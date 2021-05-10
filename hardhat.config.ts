@@ -9,22 +9,27 @@ module.exports = {
     },
     mainnet: {
       url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      // accounts: [`0x${process.env.MAINNET_PRIVATE_KEY}`]
     },
     ropsten: {
       url: `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      // accounts: [`0x${process.env.ROPSTEN_PRIVATE_KEY}`]
     },
     rinkeby: {
       url: `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      // accounts: [`0x${process.env.RINKEBY_PRIVATE_KEY}`]
     },
     goerli: {
       url: `https://goerli.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      // accounts: [`0x${process.env.GOERLI_PRIVATE_KEY}`]
     },
     kovan: {
       url: `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      // accounts: [`0x${process.env.KOVAN_PRIVATE_KEY}`]
     },
   },
   solidity: {
-    version: '0.8.4',
+    version: '0.7.6',
     settings: {
       optimizer: {
         enabled: true,
