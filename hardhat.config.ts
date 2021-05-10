@@ -2,9 +2,6 @@ import 'hardhat-typechain'
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-waffle'
 
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
 module.exports = {
   networks: {
     hardhat: {
