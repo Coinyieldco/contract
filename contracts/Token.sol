@@ -6,8 +6,8 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract CYUSDTToken is ERC20,ERC20Burnable, Pausable, Ownable {
-  constructor() ERC20("CoinYield USDT", "CYUSDT") {}
+contract Token is ERC20, ERC20Burnable, Pausable, Ownable {
+  constructor(string memory name, string memory symbol) ERC20(name, symbol) {}
 
   function pause() public onlyOwner {
     _pause();

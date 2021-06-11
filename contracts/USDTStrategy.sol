@@ -2,18 +2,10 @@
 pragma solidity ^0.8.4;
 
 import "hardhat/console.sol";
-import "./interfaces/ICoinYield.sol";
-import "./tokens/cyusdt.sol";
+import "./Strategy.sol";
+import "./Token.sol";
 
-contract USDTStrategy is ICoinYield {
-  function deposit(uint256 amount) override external payable nonReentrant {
-    IERC20 usdt = IERC20(msg.sender);
-    CYUSDTToken cyusdt = new CYUSDTToken();
-
-    // Transfer amount USDT tokens from msg.sender to contract
-    usdt.transferFrom(msg.sender, address(this), amount);
-
-    // Send amount tokens to msg.sender
-    cyusdt.mint(msg.sender, amount);
-  }
+contract USDTStrategy is Strategy {
+  address internal constant USDT_ADDRESS = 0xdAC17F958D2ee523a2206206994597C13D831ec7;
+  constructor() Strategy(IERC20(USDT_ADDRESS), new Token("CoinYield USDT Strategy", "CYUSDT")) {}
 }
