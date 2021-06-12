@@ -3,10 +3,9 @@ pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol"; 
 import "hardhat/console.sol";
-import "./interfaces/ICoinYield.sol";
 import "./Token.sol";
 
-contract Strategy is ICoinYield, ReentrancyGuard {
+contract Strategy is ReentrancyGuard {
   IERC20 private  paymentToken;
   Token private  strategyToken;
 
@@ -15,11 +14,11 @@ contract Strategy is ICoinYield, ReentrancyGuard {
     strategyToken = _strategyToken;
   }
 
-  function deposit(uint256 amount) override external payable nonReentrant {
+  function deposit(uint256 amount) external payable nonReentrant {
     // Transfer payment token from msg.sender to contract
     paymentToken.transferFrom(msg.sender, address(this), amount);
 
-    // Send amount tokens to msg.sender
+    // Mint strategy token and send it user
     strategyToken.mint(msg.sender, amount);
   }
 }

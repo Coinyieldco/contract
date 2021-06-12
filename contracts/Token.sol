@@ -17,7 +17,7 @@ contract Token is ERC20, ERC20Burnable, Pausable, Ownable {
     _unpause();
   }
 
-  function mint(address to, uint256 amount) public onlyOwner {
+  function mint(address to, uint256 amount) public {
       _mint(to, amount);
   }
 
