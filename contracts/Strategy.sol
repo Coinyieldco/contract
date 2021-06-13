@@ -14,11 +14,25 @@ contract Strategy is ReentrancyGuard {
     strategyToken = _strategyToken;
   }
 
+  // amount (1e18) in strategy tokens
   function deposit(uint256 amount) external payable nonReentrant {
     // Transfer payment token from msg.sender to contract
     paymentToken.transferFrom(msg.sender, address(this), amount);
 
+    // ToDo: Calculate how much strategy tokens will be transfered
+
     // Mint strategy token and send it user
     strategyToken.mint(msg.sender, amount);
+  }
+
+  // amount (1e18) in strategy tokens
+  function withdraw(uint256 amount) external payable nonReentrant {
+    // Burn strategy tokens
+    strategyToken.burn(msg.sender, amount);
+
+    // ToDo: Calculate how much payment tokens will be transferred
+
+    // Send payment token to user
+    paymentToken.transfer(msg.sender, amount);
   }
 }
